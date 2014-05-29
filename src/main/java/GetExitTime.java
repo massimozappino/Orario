@@ -1,5 +1,3 @@
-package myPackage;
-
 import java.text.ParseException;
 
 public class GetExitTime {
