@@ -5,8 +5,8 @@ import java.text.ParseException;
 public class MainDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
-    private JEditorPane editorPane1;
-    private JEditorPane editorPane2;
+    private JEditorPane inputPane;
+    private JEditorPane outputPane;
 
     public MainDialog() {
         setContentPane(contentPane);
@@ -28,7 +28,8 @@ public class MainDialog extends JDialog {
         TimeTable t;
         String s;
         String day = "";
-        String cartellino = editorPane1.getText();
+        String cartellino = inputPane.getText();
+        outputPane.setText("");
         if(cartellino.indexOf("\t") > 0)
         {
             for(String riga : cartellino.split("\n"))
@@ -43,7 +44,7 @@ public class MainDialog extends JDialog {
 
                         text += "\t\t\t" + t.getTimeWorked() + "\n";
                         text += "\t\t\t" + t.toString() + "\n";
-                        editorPane2.setText(editorPane2.getText() + text + "\n");
+                        outputPane.setText(outputPane.getText() + text + "\n");
                     }
                 }
                 else
